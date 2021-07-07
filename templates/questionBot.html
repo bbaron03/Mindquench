@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Question Bot Powered by Wolfram Alpha - MindQuench</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src ="/static/dictToGrid.js"></script>
+        <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+        <style type="text/css">
+            table {
+                font: size 18px;
+                font-weight: 700;
+                color:rgb(37, 37, 37);
+                border-width: 3px;
+                border-color: #9999;
+                border-collapse: collapse;
+            }
+            table th {
+                border-width: 3px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #6b7172;
+            }
+        
+            table td {
+                border-width: 3px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #6b7172;
+            }
+            .odd {
+                background-color: #ff8a0d;
+
+            }
+        
+            .even{
+                background-color: #59deff;
+            }
+            tr:hover{
+                color: #ffc107
+            }
+        </style>   
+    </head>
+    <body>
+         <!--NavBar-->
+         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container px-5">
+                <a class="navbar-brand" href=index>MindQuench</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href=index>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href=questionBot>Wolfram Alpha</a></li>
+                        <li class="nav-item"><a class="nav-link" href=login>Log In</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <form action="/result" method ="POST" class="text-center" style = "padding-top: 25px;">
+            <input type = "text" class="form-control input-lg" name = "question" placeholder ="What is your Question?" required>
+            <input type='hidden' name='redirecturl' value='/result'>
+            <div style="padding-top:20px;padding-bottom: 20px;">
+                <button type ="submit" onclick = "runAsync()" " class="btn btn-primary btn-lg" id = "submitBtn" style="height:60px;width:110px;background-color:#59deff;color:#6b7172">Search</button>
+            </div>
+        </form>
+        <table id = "grid" class="col-lg-12">
+            <tr class=>
+                <td class= "col-lg-6 text-center" style="background-color: #ff8a0d;opacity: .6;">Question</td><td class= "col-lg-6 text-center" style="background-color: #ff8a0d;opacity: .6;">Answer</td>
+            </tr>
+        </table>
+    </body>
+</html>

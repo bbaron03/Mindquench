@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Learn More</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='login.css') }}">
+</head>
+
+<body>
+     <!--NavBar-->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container px-5">
+            <a class="navbar-brand" href=index>MindQuench</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href=index>Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href=questionBot>Wolfram Alpha</a></li>
+                    <li class="nav-item"><a class="nav-link" href=login>Log In</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id ="learn">
+        <img src="{{url_for('static', filename='logoslim.png')}}" class ="slim">
+        <h5>Imagine you’re struggling with your homework problems and  you really needed help you might have called your friend from class or in the present times just gone to search it up on the web but it would take you time to find the exact problem and the appropriate solution. But students today will have a new option. </h5>
+        <h5>Visualizing one of the main problems faced by us students to find the same question and the best answer was something we found as a problem and hence brain stormed and collectively made the platform of MIND QUENCH for students around the world to help each other with their homework. The site is open to all students. Any registered student can post a question on the  platform, and other students will post answers in reply.</h5>
+        <h5>Every answer once posted is verified by the admins and a follow up answer is given if needed by an expert teacher and the chat section is monitored 24/7 to prevent any mishaps and ensure the security and satisfaction of our users.</h5>
+
+    </div>
+
+
+</body>
+
+
+
+</html>
